@@ -28,7 +28,7 @@ sub munge_file {
         }
     }
     return unless $files{$file->name};
-    my $content = $self->fill_in_string( $file->content, { plugin => $self, dist => \($self->zilla) } );
+    my $content = $self->fill_in_string( $file->content, { plugin => \$self, dist => \($self->zilla) } );
     $file->content( $content ) if defined $content;
 }
 
